@@ -12,4 +12,22 @@ fi
 ./scripts/getTreasures.sh
 ./scripts/getCoordinates.sh
 
-./geocaching.sh $(cat files/links)
+while [ $(cat files/links | wc -l) != 0 ]
+do
+    link=$(head -1 files/links)
+    sed -i "1d" files/links
+
+    ./scripts/curl.sh $link
+
+    ./scripts/parseAnchorTags.sh
+    
+    if [ $? -eq 1 ]
+    then
+    ./scripts/printResults.sh
+        exit 1
+    fi
+
+    ./scripts/getLinks.sh
+    ./scripts/getTreasures.sh
+    ./scripts/getCoordinates.sh
+done
