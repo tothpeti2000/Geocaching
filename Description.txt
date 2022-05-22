@@ -1,0 +1,14 @@
+3. A vírushelyzetre való tekintettel a geocaching szerelmesei
+is otthoni keresték a geoládákat. Írjon egy scriptet, amely
+elindul egy megadott honlapról, ott megkeresi a geoládát,
+amelyet egy olyan <a> tag rejt, amelynek class attribútuma
+geocache. Az így megtalált tag href attribútuma rejti a következő
+ládát tartalmazó oldal url-jét, az data-treasure attribútuma
+pedig a ládában található kincset. A láda pozíciója a tag
+szövegében található (az x és y koordináta vesszővel elválasztva).
+Keresse meg az összes geoládát! A script álljon le, amikor egy
+oldalon nem talál geoládát, és írja ki az összes geoláda helyét
+és a bennük talált kincset.
+
+
+<a class="geocache" href="..." treasure="...">x,y</a>
